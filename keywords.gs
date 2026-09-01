@@ -376,10 +376,20 @@ invited
 # Absender, deren Post immer Benachrichtigung ist. Typisch sind die
 # noreply-Adressen von Paketdiensten und Diensten mit Statusmeldungen:
 #
-#   @dhl.de
 #   noreply@hermes.de
+#
+# Die Paketdienste stehen hier, weil ihre Sendungsmails sonst als Newsletter
+# gelten: Seit den Bulk-Vorgaben von Google und Yahoo (2024) tragen auch reine
+# Sendungsverfolgungen einen List-Unsubscribe-Header. Damit greift in
+# labelBulkAndShipping() die Massenmail-Regel, und isShippingNotice() - die
+# Stufe, welche die Begriffe aus [benachrichtigung] oben auswertet - wird gar
+# nicht mehr erreicht. Ein Eintrag hier laeuft noch vor der Massenmail-Regel
+# und entscheidet damit unabhaengig von Headern und Footer-Text.
 
 [benachrichtigung.absender]
+@dhl.de
+@dhl.com
+@deutschepost.de
 
 # Erinnerungsmails, eigene Sektion statt Erweiterung von [benachrichtigung],
 # damit deren Name (Versand/Zustellung) treffend bleibt. Fuehrt zum selben
