@@ -1,4 +1,4 @@
-# Gmail Auto-Label 2.19
+# Google Mail Auto-Label 2.19
 
 Google-Apps-Script, das Gmail-Labels nach festen Regeln vergibt – ohne KI-Bewertung, ohne Datenabfluss. Dazu eine Anleitung, wie sich die vergebenen Labels per Scheduled Task in Claude auswerten lassen.
 
